@@ -1,0 +1,20 @@
+import bitbox from 'bitbox'
+import {div,h1,button} from 'bitbox/elements'
+import style from 'bitbox-module-counter/style'
+
+export default bitbox(({ props, state, signals }) => {
+
+	const s = bitbox.style(style, props.style)
+
+	<counter new return style=(s.main)>
+
+		<h1 style=(s.h1) => state.count</h1>
+
+		<div style=(s.buttons)>
+			<button style=(s.button) on-click=(signals.inc) => 'inc'</button>
+			<button style=(s.button) on-click=(signals.dec) => 'dec'</button>
+		</div>
+
+	</counter>
+
+})
